@@ -1,2 +1,2 @@
 # PowerShellScripts
-Repository containing scripts I use on a daily bases on eith exchnage 2013 or server 2012 
+Repository containing scripts I find helpful used on Exchange 2013 or Server 2012 

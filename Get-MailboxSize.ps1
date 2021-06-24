@@ -1,0 +1,1 @@
+Get-MailboxStatistics | where {$_.ObjectClass –eq “Mailbox”} | Sort-Object TotalItemSize –Descending | ft @{label=”User”;expression={$_.DisplayName}},@{label=”Total Size (GB)”;expression={$_.TotalItemSize.Value.ToGB()}},@{label=”Items”;expression={$_.ItemCount}},@{label=”Storage Limit”;expression={$_.StorageLimitStatus}} -auto

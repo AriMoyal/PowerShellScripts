@@ -1,0 +1,11 @@
+Get-ADGroupMember marketing
+
+Get-ADGroupmember "finance" | select-object name --- list names in group
+
+(Get-ADGroupmember "marketing" | select-object name).count --- how many members
+
+Get-ADPrincipalGroupMembership "Domain Admin"
+
+Get-ADGroupMember "Domain Admins" | select name --- list users in domain admin group
+
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools -- install Active Directory PS

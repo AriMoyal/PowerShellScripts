@@ -1,0 +1,31 @@
+Get-OrganizationConfig | Select ReadTrackingEnabled -- check to see that mail tracking is enabled
+
+Get-MessageTrackingLog -Sender user2@contoso.com -MessageSubject "the files are missing" -Start (Get-Date).AddHours(-48) -EventId RECEIVE | Select MessageID
+
+Variable : $msg
+
+$msg = Search-MessageTrackingReport -Identity <email> -BypassDelegateChecking -MessageId 4317f4746e1e4729821f8b3a839b0dcb@contoso.com
+
+$msg.count should give you the message count 1 or 3 etc
+
+Get-MessageTrackingReport -Identity $msg.MessageTrackingReportId -BypassDelegateChecking -RecipientPathF
+ilter user@contoso.org -ReportTemplate RecipientPath
+
+RunspaceId : 1f3f11af-55b7-4acc-85d6-5b31d4feb504
+MessageTrackingReportId : Message-Id=<4317f4746e1e4729821f8b3a839b0dcb@contoso.org>,Server=server@contoso.org,Internal-Id=0,Sender=529b6fb5-300e-4db1-b9c7-a8227798a0a8,Domain=contoso.org
+SubmittedDateTime       : 0001-01-01 00:00:00
+Subject                 :
+FromAddress             :
+FromDisplayName         :
+RecipientAddresses      : {}
+RecipientDisplayNames   :
+DeliveredCount          : 0
+PendingCount            : 0
+UnsuccessfulCount       : 0
+TransferredCount        : 0
+RecipientTrackingEvents : {user@contoso.com,Submitted,,2021-06-29T11:02:39.1180000Z,
+                          user@contos.com,Delivered,,2021-06-29T11:02:42.7430000Z,
+                         user@contoso.com,Read,,0001-01-01T00:00:00.0000000}
+Identity                :
+IsValid                 : True
+ObjectState             : New

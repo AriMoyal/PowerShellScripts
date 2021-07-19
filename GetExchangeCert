@@ -1,0 +1,1 @@
+Get-ExchangeCertificate | where {$_.IsSelfSigned -eq $true} | Format-List FriendlyName,Subject,CertificateDomains,Thumbprint,NotBefore,NotAfter

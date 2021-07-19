@@ -1,3 +1,3 @@
 Get-ExchangeCertificate | where {$_.IsSelfSigned -eq $true} | Format-List FriendlyName,Subject,CertificateDomains,Thumbprint,NotBefore,NotAfter
 
-New-ExchangeCertificate -KeySize 2048 -PrivateKeyExportable $true -SubjectName "cn=Microsoft Exchange Server Auth Certificate" -FriendlyName "Microsoft Exchange Server Auth Certificate" -DomainName "contoso.com"
+New-ExchangeCertificate -KeySize 2048 -PrivateKeyExportable $true -SubjectName “cn= Microsoft Exchange Server Auth Certificate” -DomainName “mail.yourdomain.com” -FriendlyName “Microsoft Exchange Server Auth Certificate” -Services SMTP 
